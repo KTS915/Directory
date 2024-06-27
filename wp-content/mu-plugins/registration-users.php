@@ -315,35 +315,10 @@ add_filter('user_can_richedit', '__return_false');
 
 
 /* REMOVE VISUAL EDITOR, KEYBOARD SHORTCUTS, AND TOOLBAR OPTIONS */
-if (!function_exists('kts_remove_personal_options')) {
-
-	function kts_remove_personal_options($subject)
-	{
-		global $pagenow;
-		if ($pagenow === 'profile.php') {
-			$subject = preg_replace('#<h2 class="user-profile-personal-options">Personal Options</h2>.+?/table>#s', '', $subject, 1);
-			return $subject;
-		}
-	}
-
-	function kts_profile_subject_start()
-	{
-		global $pagenow;
-		if ($pagenow === 'profile.php') {
-			ob_start('kts_remove_personal_options');
-		}
-	}
-
-	function kts_profile_subject_end()
-	{
-		global $pagenow;
-		if ($pagenow === 'profile.php') {
-			ob_end_flush();
-		}
-	}
-}
-add_action('admin_head', 'kts_profile_subject_start');
-add_action('admin_footer', 'kts_profile_subject_end');
+add_filter( 'user_profile_personal_options', '__return_false' );
+add_filter( 'user_profile_contact_methods', '__return_false' );
+add_filter( 'user_profile_about_yourself', '__return_false' );
+add_filter( 'user_edit_taxonomies', '__return_false' );
 
 
 /* REMOVE ADMIN MENU ITEMS FOR THOSE OTHER THAN EDITORS AND ADMINISTRATORS */
