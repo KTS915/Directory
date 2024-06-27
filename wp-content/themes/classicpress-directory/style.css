@@ -256,8 +256,8 @@ big {
 	content: "\e900";
 }
 
-.cpicon-slack::before {
-	content: "\e904";
+.cpicon-mastodon::before {
+	content: "\e910";
 }
 
 .cpicon-github::before {
@@ -270,6 +270,10 @@ big {
 
 .cpicon-facebook-f::before {
 	content: "\e902";
+}
+
+.cpicon-zulip::before {
+	content: "\e909";
 }
 
 /*--------------------------------------------------------------
@@ -787,9 +791,8 @@ object {
 
 .logo {
 	display: block;
-	flex: none;
 	text-align: left;
-	padding: .5em 0 0 1em;
+	padding: .5em 0 0;
 	background: var(--classic-bg-color);
 }
 
@@ -897,6 +900,7 @@ object {
 }
 
 .menu-toggle {
+	margin-top: 1.5em;
 	margin-bottom: 1em;
 	border: 1px solid var(--font-alt-color);
 	border-radius: var(--border-radius);
@@ -1576,6 +1580,16 @@ article.single-software {
 	align-items: center;
 }
 
+.single-software .featured-image figure {
+	margin-top: 0;
+}
+
+.single-software .featured-image figure img {
+	max-width: 100%;
+	height: auto;
+	outline: 1px solid var(--gray-border);
+}
+
 .single-software aside {
 	grid-area: sidebar;
 }
@@ -2011,7 +2025,6 @@ ul.aside-items {
 	}
 
 	.logo {
-		margin-left: -0.9em;
 		background: transparent;
 	}
 
