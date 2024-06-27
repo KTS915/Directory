@@ -1334,7 +1334,7 @@ body:not(.developer-visit) .software-item-footer {
 .social-menu {
 	width: 100%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 }
 
 #colophon .social-menu a {
@@ -2272,6 +2272,10 @@ ul.aside-items {
 
 	#footer-links a {
 		padding: 1.2em 1.5em;
+	}
+
+	.social-menu {
+		justify-content: flex-start;
 	}
 
 	.page article,
